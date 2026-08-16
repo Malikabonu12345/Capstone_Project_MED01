@@ -1,14 +1,11 @@
-import pickle
+import joblib
 import pandas as pd
 import streamlit as st
 
-# Load the trained model
-with open("noshow_model.pkl", "rb") as f:
-    model = pickle.load(f)
+model = joblib.load("noshow_model.pkl")
 
 st.title("Appointment No-Show Risk Predictor")
 
-# Adjust these inputs to match the exact features your model was trained on
 age = st.number_input("Patient age", min_value=0, max_value=115, value=30)
 wait_days = st.number_input("Days between scheduling and appointment (WaitDays)", min_value=0, value=5)
 sms_received = st.selectbox("SMS reminder sent?", ["No", "Yes"])
