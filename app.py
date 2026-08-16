@@ -27,11 +27,3 @@ if st.button("Predict"):
         st.warning("High risk — recommend a reminder call.")
     else:
         st.success("Low risk.")
-      streamlit
-scikit-learn
-pandas
-pip install -r requirements.txt
-streamlit run app.py
-git add app.py requirements.txt
-git commit -m "Add Streamlit demo app"
-git push
